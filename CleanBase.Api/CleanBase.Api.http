@@ -1,0 +1,6 @@
+@CleanBase.Api_HostAddress = http://localhost:5118
+
+GET {{CleanBase.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
