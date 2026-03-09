@@ -6,12 +6,8 @@ namespace CleanBase.Domain.Interfaces
   /// Repository interface for ToDoItem entity.
   /// Interface de repositório para a entidade ToDoItem.
   /// </summary>
-  public interface IToDoRepository
+  public interface IToDoRepository: IRepository<ToDoItem>
   {
-    Task<ToDoItem?> GetByIdAsync(Guid id);
-    Task<List<ToDoItem>> GetAllAsync();
-    Task AddAsync(ToDoItem item);
-    Task UpdateAsync(ToDoItem item);
-    Task DeleteAsync(Guid id);
+    Task<List<ToDoItem>> GetAllAsync(CancellationToken cancellationToken);
   }
 }

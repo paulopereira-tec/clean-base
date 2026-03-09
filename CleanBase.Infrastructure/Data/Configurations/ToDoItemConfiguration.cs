@@ -12,19 +12,25 @@ namespace CleanBase.Infrastructure.Data.Configurations
   {
     public void Configure(EntityTypeBuilder<ToDoItem> builder)
     {
-      builder.ToTable("ToDoItems");
+      builder.ToTable(nameof(ToDoItem).ToUpper());
 
       builder.HasKey(x => x.Id);
 
-      builder.Property(x => x.Title)
-          .IsRequired()
-          .HasMaxLength(100);
+      builder
+        .Property(x => x.Title)
+        .HasColumnName(nameof(ToDoItem.Title).ToUpper())
+        .IsRequired()
+        .HasMaxLength(100);
 
-      builder.Property(x => x.Description)
-          .HasMaxLength(500);
+      builder
+        .Property(x => x.Description)
+        .HasColumnName(nameof(ToDoItem.Description).ToUpper())
+        .HasMaxLength(500);
 
-      builder.Property(x => x.Status)
-          .IsRequired();
+      builder
+        .Property(x => x.Status)
+        .HasColumnName(nameof(ToDoItem.Status).ToUpper())
+        .IsRequired();
     }
   }
 }

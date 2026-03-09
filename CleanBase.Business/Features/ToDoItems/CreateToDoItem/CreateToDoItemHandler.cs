@@ -26,7 +26,7 @@ namespace CleanBase.Business.Features.ToDoItems.CreateToDoItem
 
       // Persist
       // Persiste no banco
-      await _repository.AddAsync(todoItem);
+      await _repository.AddAsync(todoItem, cancellationToken);
 
       // Return success with ID
       // Retorna sucesso com o ID

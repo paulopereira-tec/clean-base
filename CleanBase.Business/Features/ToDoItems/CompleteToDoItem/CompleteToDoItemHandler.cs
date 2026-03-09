@@ -22,14 +22,14 @@ namespace CleanBase.Business.Features.ToDoItems.CompleteToDoItem
 
     public async Task<Result> Handle(CompleteToDoItemCommand request, CancellationToken cancellationToken)
     {
-      var item = await _repository.GetByIdAsync(request.Id);
+      var item = await _repository.GetByIdAsync(request.Id, cancellationToken);
       if (item == null)
       {
         return Result.Fail("Item not found / Item não encontrado");
       }
 
       item.MarkAsDone();
-      await _repository.UpdateAsync(item);
+      await _repository.UpdateAsync(item, cancellationToken);
 
       // Notify via SignalR
       // Notifica via SignalR

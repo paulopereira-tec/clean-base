@@ -22,7 +22,7 @@ namespace CleanBase.Business.Jobs
     {
       _logger.LogInformation("Maintenance Job started.");
 
-      var items = await _toDoRepository.GetAllAsync();
+      var items = await _toDoRepository.GetAllAsync(CancellationToken.None);
 
       Console.WriteLine($"[" + DateTime.Now + $"] Maintenance job executed! Found {items.Count} items. / Job de manutenção executado! Encontrado {items.Count} itens.");
 

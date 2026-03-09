@@ -20,7 +20,7 @@ namespace CleanBase.Business.Features.ToDoItems.GetToDoItems
 
     public async Task<Result<List<ToDoItem>>> Handle(GetToDoItemsQuery request, CancellationToken cancellationToken)
     {
-      var items = await _repository.GetAllAsync();
+      var items = await _repository.GetAllAsync(cancellationToken);
       return Result<List<ToDoItem>>.Ok(items);
     }
   }
