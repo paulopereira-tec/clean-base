@@ -20,13 +20,13 @@ namespace CleanBase.Business.Jobs
 
     public async Task Execute()
     {
-      _logger.LogInformation("Maintenance Job started.");
+      _logger.LogInformation("=== Maintenance Job started. ===");
 
       var items = await _toDoRepository.GetAllAsync(CancellationToken.None);
 
       Console.WriteLine($"[" + DateTime.Now + $"] Maintenance job executed! Found {items.Count} items. / Job de manutenção executado! Encontrado {items.Count} itens.");
 
-      _logger.LogInformation("Maintenance Job finished.");
+      _logger.LogInformation("=== Maintenance Job finished. ===");
     }
   }
 }

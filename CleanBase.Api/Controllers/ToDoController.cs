@@ -18,7 +18,7 @@ namespace CleanBase.Api.Controllers
     }
 
     /// <summary>
-    /// Gets all ToDo items.
+    /// Gets all ToDo items. /
     /// Obtém todos os itens ToDo.
     /// </summary>
     [HttpGet]
@@ -32,7 +32,7 @@ namespace CleanBase.Api.Controllers
     }
 
     /// <summary>
-    /// Creates a new ToDo item.
+    /// Creates a new ToDo item. /
     /// Cria um novo item ToDo.
     /// </summary>
     [HttpPost]
@@ -46,7 +46,7 @@ namespace CleanBase.Api.Controllers
     }
 
     /// <summary>
-    /// Marks a ToDo item as complete.
+    /// Marks a ToDo item as complete. /
     /// Marca um item ToDo como concluído.
     /// </summary>
     [HttpPut("{id}/complete")]

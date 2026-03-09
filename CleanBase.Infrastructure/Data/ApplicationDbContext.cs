@@ -9,7 +9,7 @@ namespace CleanBase.Infrastructure.Data
   /// Database context for the application.
   /// Contexto de banco de dados da aplicação.
   /// </summary>
-  public class ApplicationDbContext : DbContext
+  public partial class ApplicationDbContext : DbContext
   {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
